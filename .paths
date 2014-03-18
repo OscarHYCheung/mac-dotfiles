@@ -1,0 +1,5 @@
+# Add RVM
+PATH=$PATH:$HOME/.rvm/bin
+
+#Add GNU core utilities
+PATH=$PATH:`brew --prefix coreutils`/libexec/gnubin

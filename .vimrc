@@ -1,12 +1,6 @@
 " Make vim more useful
 set nocompatible
 
-" Set syntax highlighting options.
-set t_Co=256
-set background=dark
-syntax on
-colorscheme badwolf
-
 " Enabled later, after Pathogen
 filetype off
 
@@ -31,7 +25,6 @@ set foldcolumn=4 " Column to show folds
 set foldenable
 set foldlevel=2
 " set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
-set foldmethod=syntax " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
 set foldnestmax=3 " Set max fold nesting level
 set formatoptions=
@@ -217,14 +210,6 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-" Set relative line numbers
-set relativenumber " Use relative line numbers. Current line is still in status bar.
-au BufReadPost,BufNewFile * set relativenumber
-
-" Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
-
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
@@ -257,3 +242,8 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
+
+" Set syntax highlighting options.
+set t_Co=256
+set background=dark
+syntax on

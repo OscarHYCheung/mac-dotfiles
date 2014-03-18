@@ -142,7 +142,7 @@ function extract() {
 
 # animated gifs from any video
 # from alex sexton   gist.github.com/SlexAxton/4989674
-gifify() {
+function gifify() {
   if [[ -n "$1" ]]; then
     if [[ $2 == '--good' ]]; then
       ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
@@ -156,3 +156,23 @@ gifify() {
   fi
 }
 
+# Update, upgrade, and cleanup brew at once
+function brew_upgrade() {
+  brew update; brew upgrade; brew cleanup;
+}
+
+function rvm_upgrade() {
+  rvm get stable
+}
+
+function npm_upgrade() {
+  npm -gf update
+}
+
+function gem_upgrade() {
+  gem update
+}
+
+function all_upgrade() {
+  brew_upgrade; rvm_upgrade; gem_upgrade; npm_upgrade;
+}
