@@ -15,7 +15,7 @@
         pu = push
         me = merge
         fe = fetch
-        fo = fetch origin
+        fa = fetch --all
         br = branch -a
         pu = remote prune
         df = diff
