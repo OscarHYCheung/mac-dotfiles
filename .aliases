@@ -90,6 +90,8 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
 # Shortcuts
 alias g="git"
+alias gi="git"
+alias gt="git"
 alias v="vim"
 
 # File size
