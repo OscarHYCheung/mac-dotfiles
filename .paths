@@ -2,7 +2,7 @@
 PATH=:/usr/local/bin:$PATH
 
 # Add RVM
-PATH=$PATH:$HOME/.rvm/bin
+PATH=$HOME/.rvm/bin:$PATH
 
 #Add GNU core utilities
 PATH=$PATH:`brew --prefix coreutils`/libexec/gnubin
