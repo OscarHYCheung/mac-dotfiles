@@ -4,7 +4,7 @@
 [color]
 	ui = always
 [alias]
-	lg = log --decorate --all --graph --oneline
+	lg = log --format='%C(auto)%h %Cgreen%ar %Cblue%aN%Cred%d %Creset%s' --graph --all
 	st = status -sb
 	cm = commit
         ca = commit -a
