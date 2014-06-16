@@ -166,7 +166,7 @@ function rvm_upgrade() {
 }
 
 function npm_upgrade() {
-  npm -gf update
+  npm -g update
 }
 
 function gem_upgrade() {
