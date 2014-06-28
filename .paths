@@ -1,8 +1,6 @@
-# Load brewhome programs before system programs.
-PATH=:/usr/local/bin:$PATH
-
-# Add RVM
-PATH=$HOME/.rvm/bin:$PATH
-
 #Add GNU core utilities
 PATH=$PATH:`brew --prefix coreutils`/libexec/gnubin
+
+#Add Android SDK tools and platform tools with Andoid Studio
+PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools
+PATH=$PATH:/Applications/Android\ Studio.app/sdk/platform-tools
