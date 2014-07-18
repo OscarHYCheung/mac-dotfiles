@@ -157,22 +157,22 @@ function gifify() {
 }
 
 # Update, upgrade, and cleanup brew at once
-function brew_upgrade() {
+function updatebrew() {
   brew update; brew upgrade; brew cleanup;
 }
 
-function rvm_upgrade() {
+function updatervm() {
   rvm get stable
 }
 
-function npm_upgrade() {
+function updatenpm() {
   npm -g update
 }
 
-function gem_upgrade() {
+function updategem() {
   gem update
 }
 
-function all_upgrade() {
-  brew_upgrade; rvm_upgrade; gem_upgrade; npm_upgrade;
+function update() {
+  updatebrew; updatervm; updategem; updatenpm;
 }
