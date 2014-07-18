@@ -158,18 +158,22 @@ function gifify() {
 
 # Update, upgrade, and cleanup brew at once
 function updatebrew() {
+  echo "Start updating brew"
   brew update; brew upgrade; brew cleanup;
 }
 
 function updatervm() {
+  echo "Start updating rvm"
   rvm get stable
 }
 
 function updatenpm() {
+  echo "Start updating npm"
   npm -g update
 }
 
 function updategem() {
+  echo "Start updating gem"
   gem update
 }
 
