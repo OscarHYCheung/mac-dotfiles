@@ -1,5 +1,8 @@
 #Add GNU core utilities
-PATH=$PATH:`brew --prefix coreutils`/libexec/gnubin
+PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
+
+#Add Heroku
+PATH=$PATH:/usr/local/heroku/bin
 
 #Add Android SDK tools and platform tools with Andoid Studio
 PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools
