@@ -180,3 +180,12 @@ function updategem() {
 function update() {
   updatebrew; updatervm; updategem; updatenpm;
 }
+
+function openloginitems() {
+  open -a "BetterTouchTool"
+  open -a "Android File Transfer Agent"
+  open -a "Alfred 2"
+  open -a "Divvy"
+  open -a "Google Drive"
+  open -a "Dropbox"
+}
