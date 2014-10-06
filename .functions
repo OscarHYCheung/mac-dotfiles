@@ -184,7 +184,7 @@ function updatedocker() {
 }
 
 function update() {
-  updatebrew; updatervm; updategem; updatenpm;
+  updatebrew; updategem; updatenpm;
 }
 
 function openloginitems() {
