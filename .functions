@@ -164,7 +164,7 @@ function updatebrew() {
 
 function updatervm() {
   echo "Start updating rvm"
-  rvm get stable
+  rvm get latest
 }
 
 function updatenpm() {
