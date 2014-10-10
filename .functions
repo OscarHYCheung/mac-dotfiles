@@ -177,12 +177,6 @@ function updategem() {
   gem update
 }
 
-function updatedocker() {
-  echo "Start updating docker"
-  boot2docker stop
-  boot2docker download
-}
-
 function update() {
   updatebrew; updategem; updatenpm;
 }
