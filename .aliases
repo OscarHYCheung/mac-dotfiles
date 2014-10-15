@@ -111,6 +111,3 @@ done
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
-
-# Link docker with VM created by boot2docker
-alias docker="command docker -H tcp://192.168.59.103:2375"
