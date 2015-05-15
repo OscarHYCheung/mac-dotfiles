@@ -13,3 +13,6 @@ mkdir ~/.vim
 mkdir ~/.vim/backups
 mkdir ~/.vim/swaps
 mkdir ~/.vim/undo
+
+# Copy config files and profiles
+cp ./.aliases ./.bash_profile ./.bash_prompt ./.exports ./.functions ./.paths ./.vimrc ./.gitconfig ./.gitignore ~/
