@@ -35,7 +35,10 @@ alias lsd='ls -l | grep "^d"'
 # Always use color output for `ls`
 alias ls="command ls --color"
 
-# git root
+# Git shortcuts
+alias g="git"
+alias gi="git"
+alias gt="git"
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
 # IP addresses
@@ -62,10 +65,7 @@ alias trimcopy="tr -d '\n' | pbcopy"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 
-# Shortcuts
-alias g="git"
-alias gi="git"
-alias gt="git"
+# Vim shortcuts
 alias v="vim"
 
 # File size
