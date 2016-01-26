@@ -3,7 +3,6 @@ function md() {
 	mkdir -p "$@" && cd "$@"
 }
 
-
 # find shorthand
 function f() {
     find . -name "$1"
@@ -188,4 +187,10 @@ function openloginitems() {
   open -a "Divvy"
   open -a "Google Drive"
   open -a "Dropbox"
+}
+
+# Docker
+function dockerup() {
+  docker-machine start default
+  eval $(docker-machine env default)
 }
