@@ -15,9 +15,3 @@ export HISTTIMEFORMAT
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
-
-# Link Docker with VM
-export DOCKER_HOST=tcp://192.168.59.103:2375
-
-# Set Golang workspace
-export GOPATH=$HOME/Workspace/go
