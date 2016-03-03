@@ -181,8 +181,6 @@ function dinghyup() {
   fi
 
   echo "Start exporting Docker environment variables"
-  eval $(docker-machine env dinghy)
-
-  echo "Docker is good to go!"
+  eval $(docker-machine env dinghy) && echo "Docker is good to go!"
 }
 
