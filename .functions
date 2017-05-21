@@ -132,7 +132,7 @@ function gifify() {
 # Update, upgrade, and cleanup brew at once
 function updatebrew() {
   echo "Start updating brew"
-  brew update; brew upgrade --all; brew cleanup;
+  brew update; brew upgrade; brew cleanup;
 }
 
 function updatervm() {
