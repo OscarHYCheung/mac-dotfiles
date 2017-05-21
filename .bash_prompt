@@ -2,7 +2,7 @@
 # Shamelessly copied from https://github.com/gf3/dotfiles
 
 default_username='oscar'
-default_hostname='MacBook-Pro.local'
+default_hostnames=('MacBook-Pro.local', 'Oscar-MBP')
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
     export TERM=gnome-256color
@@ -52,8 +52,19 @@ function git_info() {
 }
 
 # Only show username/host if not default
+function islocal() {
+    for i in "${default_hostnames[@]}"
+    do
+        if [ "$i" == "$HOSTNAME" ] ; then
+            return 0
+        fi
+    done
+    return 1
+}
 function usernamehost() {
-    if [ $USER != "$default_username" ] || [ $HOSTNAME != "$default_hostname" ]; then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME ${WHITE}"; fi
+    if [ $USER != "$default_username" ] || ! islocal  ; then
+      echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME ${WHITE}";
+    fi
 }
 
 # iTerm Tab and Title Customization and prompt customization
