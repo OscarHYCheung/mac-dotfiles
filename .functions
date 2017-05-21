@@ -153,24 +153,3 @@ function updategem() {
 function update() {
   updatebrew; updategem; updatenpm;
 }
-
-# Docker
-function dockerup() {
-  docker-machine start default
-
-  echo "Start exporting Docker environment variables"
-  eval $(docker-machine env default)
-  echo "Docker is good to go!"
-}
-
-function dinghyup() {
-  if [[ $(dinghy status) == *"stopped"* ]]
-  then
-    dinghy up
-  else
-    echo "dinghy is already running"
-  fi
-
-  echo "Start exporting Docker environment variables"
-  eval $(docker-machine env dinghy) && echo "Docker is good to go!"
-}
