@@ -154,15 +154,6 @@ function update() {
   updatebrew; updategem; updatenpm;
 }
 
-function openloginitems() {
-  open -a "BetterTouchTool"
-  open -a "Android File Transfer Agent"
-  open -a "Alfred 2"
-  open -a "Divvy"
-  open -a "Google Drive"
-  open -a "Dropbox"
-}
-
 # Docker
 function dockerup() {
   docker-machine start default
@@ -183,4 +174,3 @@ function dinghyup() {
   echo "Start exporting Docker environment variables"
   eval $(docker-machine env dinghy) && echo "Docker is good to go!"
 }
-
