@@ -1,8 +1,8 @@
 [user]
 	name = Oscar Cheung
-	email = github@oscarcheung.me 
+	email = github@oscarcheung.me
 [color]
-	ui = always
+	ui = auto
 [alias]
 	lg = log --format='%C(auto)%h %Cgreen%ar %Cblue%aN%Cred%d %Creset%s' --graph --all
 	st = status -sb
@@ -23,7 +23,7 @@
 	excludesfile = /Users/Oscar/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
