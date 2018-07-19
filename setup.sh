@@ -3,6 +3,7 @@
 curl -L https://get.rvm.io | bash -s stable --ruby
 
 # Install common things
+brew tap caskroom/cask
 brew install z bash-completion git coreutils vim
 
 # Crearte vim directories
