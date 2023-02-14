@@ -6,7 +6,7 @@ Customlized for own use.
 ## Pre-request
 
 ### Install homebrew
-```ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
+```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```
 
 ### Install Git
 ```brew install git```
