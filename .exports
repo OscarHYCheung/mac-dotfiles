@@ -25,5 +25,5 @@ export PATH="$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS"
 # NVM directory
 export NVM_DIR="$HOME/.nvm"
 
-# Add RVM to path
-export PATH="$PATH:$HOME/.rvm/bin"
+# Remove switch to zsh message
+export BASH_SILENCE_DEPRECATION_WARNING=1

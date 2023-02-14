@@ -1,9 +1,12 @@
-#Add GNU core utilities
+# Add Homebrew
+PATH=/opt/homebrew/bin:$PATH
+
+# Add GNU core utilities
 PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
 
-#Add Heroku
-PATH=$PATH:/usr/local/heroku/bin
+# Add RVM
+PATH=$HOME/.rvm/bin:$PATH
 
-#Add Android SDK tools and platform tools with Andoid Studio
+# Add Android SDK tools and platform tools with Andoid Studio
 PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools
 PATH=$PATH:/Applications/Android\ Studio.app/sdk/platform-tools
