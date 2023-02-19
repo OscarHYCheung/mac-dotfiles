@@ -14,4 +14,4 @@ Customlized for own use.
 ## Post-installation
 
 1. Change username and hostname in ```~/.bash_prompt```
-2. Install necessary applications [Essential Mac Apps](https://gist.github.com/hycheung0509/58e313105229a224810a#file-essential_mac_apps-md)
+2. Install necessary applications [Essential Mac Apps](https://gist.github.com/oscarhycheung/58e313105229a224810a#file-essential_mac_apps-md)
