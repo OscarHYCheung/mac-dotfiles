@@ -8,6 +8,7 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 
 # Install common things
 brew install z bash-completion git coreutils vim
+brew install --cask notunes
 
 # Crearte vim directories
 mkdir ~/.vim
