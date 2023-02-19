@@ -1,5 +1,6 @@
 # Change to use bash
-chsh -s /bin/bash
+brew install bash
+sudo chsh -s /opt/homebrew/bin/bash
 
 # https://rvm.io
 # rvm for the rubiess
