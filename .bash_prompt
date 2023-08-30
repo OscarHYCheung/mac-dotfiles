@@ -2,7 +2,7 @@
 # Shamelessly copied from https://github.com/gf3/dotfiles
 
 default_username='oscar'
-default_hostnames=('Oscar-MBP' 'Oscar-MBP.local' 'Oscars-Mac-mini.local' 'Oscars-Mac-mini')
+default_hostnames=('Oscar-MBP' 'Oscars-Mac-mini' 'Oscars-MacBook-Air' 'Oscar-MBP.local' 'Oscars-Mac-mini.local' 'Oscars-MacBook-Air.local')
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
     export TERM=gnome-256color
