@@ -2,7 +2,7 @@
 PATH=/opt/homebrew/bin:$PATH
 
 # Add GNU core utilities
-PATH=`brew --prefix coreutils`/libexec/gnubin:$PATH
+PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
 # Add RVM
 PATH=$HOME/.rvm/bin:$PATH

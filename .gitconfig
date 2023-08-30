@@ -1,32 +1,32 @@
 [user]
-	name = Oscar Cheung
-	email = github@oscarcheung.me
+name = Oscar Cheung
+email = github@oscarcheung.me
 [color]
-	ui = auto
+ui = auto
 [alias]
-	lg = log --format='%C(auto)%h %Cgreen%ar %Cblue%aN%Cred%d %Creset%s' --graph --all
-	st = status -sb
-	cm = commit
-        ca = commit -a
-        ad = add
-        aa = add -A
-        rb = rebase
-        ri = rebase -i
-        pu = push
-        me = merge
-        fe = fetch
-        fa = fetch --all
-        br = branch -a
-        pu = remote prune
-        df = diff
+lg = log --format='%C(auto)%h %Cgreen%ar %Cblue%aN%Cred%d %Creset%s' --graph --all
+st = status -sb
+cm = commit
+ca = commit -a
+ad = add
+aa = add -A
+rb = rebase
+ri = rebase -i
+pu = push
+me = merge
+fe = fetch
+fa = fetch --all
+br = branch -a
+pu = remote prune
+df = diff
 [core]
-	excludesfile = /Users/Oscar/.gitignore
+excludesfile = /Users/Oscar/.gitignore
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+trustExitCode = true
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+clean = git-media-clean %f
+smudge = git-media-smudge %f

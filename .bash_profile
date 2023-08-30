@@ -6,10 +6,10 @@ done
 unset file
 
 # Exec Z script
-. `brew --prefix z`/etc/profile.d/z.sh
+. $(brew --prefix z)/etc/profile.d/z.sh
 
 # Exec bash completion
-. `brew --prefix bash-completion`/etc/bash_completion
+. $(brew --prefix bash-completion)/etc/bash_completion
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
