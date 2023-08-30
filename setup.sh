@@ -6,6 +6,10 @@ chsh -s /bin/bash
 # rvm for the rubiess
 curl -L https://get.rvm.io | bash -s stable --ruby
 
+# https://github.com/nvm-sh/nvm#installing-and-updating
+# nvm for the nodeers
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
 # Install common things
 brew install z bash-completion git coreutils vim
 brew install --cask notunes
