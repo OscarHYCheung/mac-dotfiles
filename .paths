@@ -1,12 +1,12 @@
-# Add Homebrew
-PATH=/opt/homebrew/bin:$PATH
-
-# Add GNU core utilities
-PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+# Add Homebrew (arch-agnostic) and GNU coreutils shims if available
+if command -v brew >/dev/null 2>&1; then
+	PATH="$(brew --prefix)/bin:$PATH"
+	PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
 
 # Add RVM
-PATH=$HOME/.rvm/bin:$PATH
+PATH="$HOME/.rvm/bin:$PATH"
 
 # Add Android SDK tools and platform tools with Andoid Studio
-PATH=$PATH:/Applications/Android\ Studio.app/sdk/tools
-PATH=$PATH:/Applications/Android\ Studio.app/sdk/platform-tools
+PATH="$PATH:/Applications/Android Studio.app/sdk/tools"
+PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"

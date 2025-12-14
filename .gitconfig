@@ -20,7 +20,7 @@ br = branch -a
 pu = remote prune
 df = diff
 [core]
-excludesfile = /Users/Oscar/.gitignore
+excludesfile = ~/.gitignore
 [difftool "sourcetree"]
 cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 path =
