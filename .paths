@@ -1,8 +1,12 @@
-# Add Homebrew (arch-agnostic) and GNU coreutils shims if available
-if command -v brew >/dev/null 2>&1; then
-	PATH="$(brew --prefix)/bin:$PATH"
-	PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+# Homebrew environment
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x "/usr/local/bin/brew" ]]; then
+	eval "$(/usr/local/bin/brew shellenv)"
 fi
+
+# Add GNU coreutils shims
+PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # Add RVM
 PATH="$HOME/.rvm/bin:$PATH"
