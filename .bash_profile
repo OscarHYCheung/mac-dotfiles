@@ -26,27 +26,30 @@ fi
 [[ -s $NVM_DIR/nvm.sh ]] && . $NVM_DIR/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 
-# Auto-use Node version from .nvmrc on directory change by wrapping cd
-if command -v nvm >/dev/null 2>&1 && typeset -f nvm_find_nvmrc >/dev/null 2>&1; then
-	nvm_auto_use_cd() {
-		local nvmrc
-		nvmrc=$(nvm_find_nvmrc)
-		if [[ -n "$nvmrc" ]]; then
-			local requested
-			requested=$(<"$nvmrc")
-			if [[ "$requested" != "${NVM_AUTO_USE_CURRENT:-}" ]]; then
-				nvm use --silent >/dev/null 2>&1 && NVM_AUTO_USE_CURRENT="$requested"
-			fi
-		elif [[ -n "${NVM_AUTO_USE_CURRENT:-}" ]]; then
-			nvm use default >/dev/null 2>&1
-			unset NVM_AUTO_USE_CURRENT
-		fi
-	}
+# NVM auto-use logic
+if command -v nvm >/dev/null 2>&1; then
+    nvm_auto_use() {
+        local nvmrc
+        nvmrc=$(nvm_find_nvmrc)
+        if [[ -n "$nvmrc" ]]; then
+            local requested
+            requested=$(<"$nvmrc")
+            if [[ "$requested" != "$(nvm current)" ]]; then
+                nvm use "$requested" --silent >/dev/null 2>&1 || nvm install "$requested"
+            fi
+        elif [[ "$(nvm current)" != "none" ]]; then
+            nvm use default >/dev/null 2>&1
+        fi
+    }
 
-	cd() {
-		nvm_auto_use_cd
-		builtin cd "$@" || return $?
-	}
+    # Run the auto-use logic on terminal startup
+    nvm_auto_use
+
+    # Wrap cd to trigger auto-use on directory change
+    cd() {
+        builtin cd "$@" || return $?
+        nvm_auto_use
+    }
 fi
 
 source ~/.profile
