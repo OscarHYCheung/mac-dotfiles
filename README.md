@@ -21,11 +21,11 @@ What the script does:
 - Ensures Homebrew is present, updates formulae, and installs the packages/casks defined inside (including the latest Homebrew bash).
 - If a Brewfile exists, runs `brew bundle --no-lock` to install declared packages/casks; otherwise installs the built-in list.
 - Switches the login shell to the Homebrew bash (adding it to `/etc/shells` if needed).
-- Installs RVM (with Ruby) and nvm if missing.
+- Installs nvm if missing (latest release, resolved via the GitHub API).
 - Creates Vim swap/undo/backup directories and symlinks the dotfiles into `$HOME` so they stay in sync with the repo.
+- Imports `config.terminal` into the Terminal app and sets it as the default/startup profile.
 
 ## Post-installation
 
 1. Update the username/hostname prompt in `~/.bash_prompt`.
 2. Install the recommended apps: [Essential Mac Apps](https://gist.github.com/oscarhycheung/58e313105229a224810a#file-essential_mac_apps-md).
-3. Import `config.terminal` into the Terminal app if you want the colour profile.

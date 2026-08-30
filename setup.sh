@@ -78,20 +78,16 @@ ensure_shell() {
 	fi
 }
 
-install_rvm() {
-	if [[ -d "$HOME/.rvm" ]]; then
-		log "RVM already installed"
-	else
-		log "Installing RVM (Ruby)"
-		curl -fsSL https://get.rvm.io | bash -s stable --ruby
-	fi
-}
-
 install_nvm() {
-	local nvm_version="v0.39.7"
 	if [[ -d "$HOME/.nvm" ]]; then
 		log "nvm already installed"
 	else
+		local nvm_version
+		nvm_version=$(curl -fsSL https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep -m1 '"tag_name"' | cut -d'"' -f4)
+		if [[ -z "$nvm_version" ]]; then
+			log "Could not resolve latest nvm version from GitHub API; aborting"
+			return 1
+		fi
 		log "Installing nvm ($nvm_version)"
 		curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${nvm_version}/install.sh" | bash
 	fi
@@ -105,7 +101,7 @@ install_brew_packages() {
 	brewfile_path="$SCRIPT_DIR/Brewfile"
 	if [[ -f "$brewfile_path" ]]; then
 		log "Using Brewfile at $brewfile_path"
-		brew bundle install
+		brew bundle install --no-lock
 		return
 	fi
 
@@ -143,15 +139,43 @@ copy_dotfiles() {
 	done
 }
 
+install_terminal_profile() {
+	local profile_path="$SCRIPT_DIR/config.terminal"
+	if [[ ! -f "$profile_path" ]]; then
+		log "Skipping missing config.terminal"
+		return
+	fi
+
+	log "Importing and applying config.terminal profile"
+	osascript <<-OSA
+		tell application "Terminal"
+			set initialOpenedWindows to id of every window
+			open POSIX file "$profile_path"
+			delay 1
+			set allOpenedWindows to id of every window
+			repeat with windowID in allOpenedWindows
+				if initialOpenedWindows does not contain windowID then
+					set currentSettings to current settings of tab 1 of (first window whose id is windowID)
+					set theName to name of currentSettings
+					set default settings to settings set theName
+					set startup settings to settings set theName
+					close (first window whose id is windowID) saving no
+					exit repeat
+				end if
+			end repeat
+		end tell
+	OSA
+}
+
 main() {
 	ensure_homebrew
 	ensure_brew_shellenv
 	install_brew_packages
 	ensure_shell
-	install_rvm
 	install_nvm
 	prepare_vim_dirs
 	copy_dotfiles
+	install_terminal_profile
 	log "Setup complete, please restart your terminal session."
 }
 

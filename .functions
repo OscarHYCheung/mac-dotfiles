@@ -32,10 +32,10 @@ function httpcompression() {
 function json() {
   if [ -p /dev/stdin ]; then
     # piping, e.g. `echo '{"foo":42}' | json`
-    python -mjson.tool | pygmentize -l javascript
+    python3 -mjson.tool | pygmentize -l javascript
   else
     # e.g. `json '{"foo":42}'`
-    python -mjson.tool <<<"$*" | pygmentize -l javascript
+    python3 -mjson.tool <<<"$*" | pygmentize -l javascript
   fi
 }
 
@@ -129,11 +129,6 @@ function updatebrew() {
   brew update
   brew upgrade
   brew cleanup
-}
-
-function updatervm() {
-  echo "Start updating rvm"
-  rvm get latest
 }
 
 function updatenpm() {
