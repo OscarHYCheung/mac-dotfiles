@@ -141,6 +141,15 @@ function updatenpm() {
   npm -g update
 }
 
+function updateclaude() {
+  echo "Start updating Claude Desktop and CLI"
+  brew upgrade claude claude-code@latest
+  echo "Start updating Claude plugins"
+  claude plugin list --json | jq -r '.[].id' | while read -r plugin; do
+    claude plugin update "$plugin" -y
+  done
+}
+
 function updategem() {
   echo "Start updating gem"
   gem update
@@ -150,4 +159,5 @@ function update() {
   updatebrew
   updategem
   updatenpm
+  updateclaude
 }
