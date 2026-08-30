@@ -88,10 +88,15 @@ install_rvm() {
 }
 
 install_nvm() {
-	local nvm_version="v0.39.7"
 	if [[ -d "$HOME/.nvm" ]]; then
 		log "nvm already installed"
 	else
+		local nvm_version
+		nvm_version=$(curl -fsSL https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep -m1 '"tag_name"' | cut -d'"' -f4)
+		if [[ -z "$nvm_version" ]]; then
+			log "Could not resolve latest nvm version from GitHub API; aborting"
+			return 1
+		fi
 		log "Installing nvm ($nvm_version)"
 		curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${nvm_version}/install.sh" | bash
 	fi

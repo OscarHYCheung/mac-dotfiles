@@ -10,7 +10,3 @@ PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 # Add RVM
 PATH="$HOME/.rvm/bin:$PATH"
-
-# Add Android SDK tools and platform tools with Andoid Studio
-PATH="$PATH:/Applications/Android Studio.app/sdk/tools"
-PATH="$PATH:/Applications/Android Studio.app/sdk/platform-tools"
