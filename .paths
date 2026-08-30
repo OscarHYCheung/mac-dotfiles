@@ -7,6 +7,3 @@ fi
 
 # Add GNU coreutils shims
 PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-
-# Add RVM
-PATH="$HOME/.rvm/bin:$PATH"

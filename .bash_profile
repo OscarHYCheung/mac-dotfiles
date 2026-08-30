@@ -19,9 +19,6 @@ if command -v brew >/dev/null 2>&1; then
 	fi
 fi
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Load NVM
 [[ -s $NVM_DIR/nvm.sh ]] && . $NVM_DIR/nvm.sh
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
@@ -52,4 +49,4 @@ if command -v nvm >/dev/null 2>&1; then
     }
 fi
 
-source ~/.profile
+[ -r ~/.profile ] && source ~/.profile

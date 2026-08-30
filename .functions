@@ -131,11 +131,6 @@ function updatebrew() {
   brew cleanup
 }
 
-function updatervm() {
-  echo "Start updating rvm"
-  rvm get latest
-}
-
 function updatenpm() {
   echo "Start updating npm"
   npm -g update
