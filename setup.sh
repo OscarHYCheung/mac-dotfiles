@@ -101,7 +101,7 @@ install_brew_packages() {
 	brewfile_path="$SCRIPT_DIR/Brewfile"
 	if [[ -f "$brewfile_path" ]]; then
 		log "Using Brewfile at $brewfile_path"
-		brew bundle install --no-lock
+		brew bundle install
 		return
 	fi
 
